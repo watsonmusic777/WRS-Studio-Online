@@ -1,0 +1,130 @@
+/* ————————————————————————————————
+   ABOUT PAGE — WATSON RECORDING STUDIO
+   Clean, hybrid cinematic + warm style
+   No hero section anywhere
+———————————————————————————————— */
+
+/* Reset page spacing */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: #f2f2f2;
+    font-family: "Inter", sans-serif;
+}
+
+/* Remove ANY hero spacing that global.css might add */
+
+
+/* Top container (title + intro) */
+.about-top-container {
+    padding: 80px 20px 40px;
+    text-align: center;
+}
+
+.about-top-container h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #f7d27c; /* warm gold */
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+.about-divider {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(to right, #f7d27c, #c59b4a);
+    margin: 30px auto 0;
+    border-radius: 2px;
+}
+
+/* Main content layout */
+.about-section {
+    padding: 40px 20px 80px;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* Text column */
+.about-text {
+    flex: 1 1 550px;
+}
+
+.about-text h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    color: #f7d27c;
+}
+
+.about-text p {
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+.about-list {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.about-list li {
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+.about-image img {
+    width: 250px;      /* shrink the image */
+    height: auto;      /* keep proportions */
+    object-fit: cover; /* prevents weird stretching */
+    border-radius: 12px;
+}
+
+
+
+.about-image img {
+    width: 100%;
+    max-width: 380px;   /* controls the size */
+    height: auto;       /* natural height, no distortion */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.about-page .site-footer,
+.about-page .footer-container {
+    max-width: 1100px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.about-page .footer-container {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 40px !important;
+}
+
+.site-footer {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
