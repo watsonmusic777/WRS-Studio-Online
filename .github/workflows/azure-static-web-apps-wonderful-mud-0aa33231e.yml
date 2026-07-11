@@ -43,11 +43,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_MUD_0AA33231E }}
           action: "upload"
 
-          # Repository/Build Configurations
-          app_location: "/"        # App source code path
-          api_location: ""         # No API
-          output_location: "/"     # Built app content directory
-          github_id_token: ${{ steps.idtoken.outputs.result }}
+          app_location: "/"
+          api_location: ""
+          output_location: "/"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
