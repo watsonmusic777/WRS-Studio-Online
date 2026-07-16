@@ -326,6 +326,23 @@ nav ul li a {
   filter: brightness(1.08);
   box-shadow: 0 0 18px rgba(245, 212, 107, 0.9);
 }
+<<<<<<< HEAD
+=======
+.sync-popup * {
+    all: unset;
+    display: revert;
+}
+.sync-popup-content input,
+.sync-popup-content button,
+.sync-popup-content label {
+    all: revert;
+}
+.what-we-do {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+>>>>>>> aad497fdf7face1e398b0739dc6c7650833c1d4d
 
 /* ---------- Email / Popup ---------- */
 
