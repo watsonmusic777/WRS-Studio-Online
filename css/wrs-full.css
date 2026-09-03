@@ -29,15 +29,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* HERO SPACING (ALL PAGES THAT USE HERO) */
+.hero,
+.studio-hero,
+.about-hero,
+.home-hero {
+   margin-top: 0 !important;
+}
+
 
 html,
 body {
   width: 100%;
-  height: 100%;
   background: radial-gradient(circle at top, #111111 0%, #000000 55%, #000000 100%);
   color: var(--text-main);
   font-family: var(--font-main);
 }
+
 
 /* Smooth scroll */
 html {
@@ -123,8 +131,20 @@ nav ul li a {
   margin-bottom: 40px;
 }
 .hero-home {
-    margin-top: 200px;
+    margin-top: 0 !important;
 }
+.home-hero {
+    height: 600px;              /* perfect for a 1920x1280 hero */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.home-hero-overlay {
+  pointer-events: none;
+}
+
+
 
 .hero-logo {
   font-size: 2.6rem;
@@ -225,8 +245,8 @@ nav ul li a {
 
 /* ---------- Player Section ---------- */
 
-.player-section {
-  margin-top: 40px;
+.player-selection {
+  margin-top: 120px !important;
   padding: 18px 16px;
   background: linear-gradient(160deg, #050505, #121212);
   border-radius: 10px;
@@ -235,6 +255,7 @@ nav ul li a {
     0 0 18px rgba(0, 0, 0, 0.9),
     0 0 22px rgba(212, 175, 55, 0.35);
 }
+
 
 .player-header {
   display: flex;
@@ -326,8 +347,6 @@ nav ul li a {
   filter: brightness(1.08);
   box-shadow: 0 0 18px rgba(245, 212, 107, 0.9);
 }
-<<<<<<< HEAD
-=======
 .sync-popup * {
     all: unset;
     display: revert;
@@ -342,8 +361,127 @@ nav ul li a {
     margin: 0 auto;
     text-align: center;
 }
->>>>>>> aad497fdf7face1e398b0739dc6c7650833c1d4d
 
+.services-grid img {
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto; /* centers the whole grid */
+    justify-items: center; /* centers each card */
+}
+
+.service-card {
+    border: 3px solid #d4af37;
+    border-radius: 14px;
+    padding: 20px;
+    background: #0a0a0a;
+    box-shadow: 0 0 22px rgba(212, 175, 55, 0.25);
+}
+
+/* CINEMATIC STYLE FOR WHAT WE DO SECTION */
+.wrs-what-we-do.cinematic-card {
+    background: linear-gradient(145deg, #0b0b0b, #111);
+    border-radius: 18px;
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin: 100px auto 60px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 0 60px rgba(0,0,0,0.6),
+        0 0 120px rgba(212,175,55,0.15);
+}
+
+/* Gold glow behind the section */
+.wrs-what-we-do.cinematic-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top center,
+        rgba(212,175,55,0.15),
+        transparent 70%
+    );
+    z-index: 0;
+}
+
+/* Grain texture overlay */
+.wrs-what-we-do.cinematic-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('/assets/grain.png');
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Title styling */
+.wrs-what-we-do.cinematic-card h2 {
+    position: relative;
+    z-index: 3;
+    font-size: 48px;
+    color: #d4af37;
+    margin-bottom: 25px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 18px rgba(212,175,55,0.35);
+}
+
+
+/* CINEMATIC CARD (for big section blocks) */
+.cinematic-card {
+    background: #0a0a0a;
+    border: 1px solid #b8860b;
+    border-radius: 16px;
+    padding: 60px 50px;
+    max-width: 1000px;
+    margin: 80px auto;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cinematic-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.45);
+}
+
+.cinematic-card h2 {
+    color: #f5d37d;
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 14px rgba(255, 215, 0, 0.35);
+}
+
+.cinematic-card p {
+    color: #ddd;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.form-title {
+    text-align: center;
+    color: #FFD700; /* 24K Gold */
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.45);
+}
 /* ---------- Email / Popup ---------- */
 
 .email-popup {
@@ -360,7 +498,10 @@ nav ul li a {
     0 0 20px rgba(212, 175, 55, 0.4);
   color: var(--text-main);
   font-size: 0.85rem;
-  z-index: 999;
+  z-index: 10;
+}
+.sync-popup {
+  margin-bottom: 80px;
 }
 
 .email-popup-title {
@@ -399,40 +540,58 @@ nav ul li a {
   cursor: pointer;
 }
 
-/* ---------- Footer ---------- */
 
-.footer {
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(212, 175, 55, 0.35);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--text-soft);
-  font-size: 0.8rem;
+/* ========================= */
+/*        GLOBAL FOOTER      */
+/* ========================= */
+
+.gold-footer {
+  background: #0a0a0a;
+  border-top: 2px solid #d4af37;
+  padding: 50px 40px;
+  color: #d4af37;
+  margin-top: 75px; /* adjust between 50–100px */
 }
 
-.footer-left {
-  letter-spacing: 0.12em;
+/* 4‑Column Grid Layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* Column Titles */
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.footer-right {
-  display: flex;
-  gap: 12px;
-}
-
-.footer-link {
-  color: var(--gold-main);
+/* Footer Links */
+.footer-col a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
   text-decoration: none;
-  font-size: 0.8rem;
+  color: #d4af37;
+  transition: 0.3s;
 }
 
-.footer-link:hover {
-  text-decoration: underline;
+.footer-col a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #d4af37;
 }
+
+/* Bottom Copyright */
+.footer-copy {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.9;
+  margin-top: 20px;
+}
+
 
 /* ---------- Utility Classes ---------- */
 
@@ -476,16 +635,872 @@ nav ul li a {
     left: 12px;
     width: auto;
   }
-
-  .footer {
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
-  }
-}
+  
 .main-content {
     position: relative;
 }
 .hero-home .hero-img {
-    position: absolute;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/* WRS Listening Station Card */
+.wrs-listening-card {
+  background: #0d0e11;
+  border: 2px solid #f0b63a;
+  border-radius: 12px;
+  padding: 30px 20px;
+  margin: 40px auto 20px auto;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+.wrs-listening-card h2 {
+  font-size: 34px;
+  color: #f0b63a;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.wrs-listening-card .wrs-subtitle {
+  font-size: 16px;
+  color: #d0d3e0;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+/* WRS Listening Station Banner */
+.wrs-listening-banner {
+  background: linear-gradient(135deg, #0a0b0d, #1a1c22);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 2px solid #f0b63a;
+  margin-top: 40px;
+}
+
+.wrs-listening-banner h2 {
+  font-size: 32px;
+  color: #f0b63a;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.wrs-listening-banner p {
+  font-size: 16px;
+  color: #d0d3e0;
+}
+
+/* Player */
+.player-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #111319;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+.track {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #2a2d36;
+}
+.track:last-child {
+  border-bottom: none;
+}
+.track-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+.track-meta {
+  font-size: 12px;
+  color: #b0b3c0;
+}
+.track-buttons button {
+  margin-left: 5px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+.btn-mp3 {
+  background: #f0b63a;
+  color: #111319;
+}
+.btn-wav {
+  background: #3ac0f0;
+  color: #050608;
+}
+.now-playing {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #d0d3e0;
+}
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    .player-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #111319;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+    .track {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #2a2d36;
+    }
+    .track:last-child {
+      border-bottom: none;
+    }
+    .track-info {
+      flex: 1 1 55%;
+    }
+    .track-title {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .track-meta {
+      font-size: 12px;
+      color: #b0b3c0;
+    }
+    .track-buttons {
+      flex: 1 1 40%;
+      text-align: right;
+    }
+    button {
+      margin-left: 5px;
+      margin-top: 5px;
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-mp3 {
+      background: #f0b63a;
+      color: #111319;
+    }
+    .btn-wav {
+      background: #3ac0f0;
+      color: #050608;
+    }
+    button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.1);
+    }
+    .now-playing {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #d0d3e0;
+    }
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+.wrs-listening-card {
+    margin-bottom: 40px; /* space under the top banner */
+}
+
+.sync-section {
+    margin: 40px auto; /* space above and below the sync form */
+}
+
+.player-container {
+    margin-top: 40px; /* space above the player */
+}
+.sync-section {
+    margin-top: 25px;   /* just enough space */
+}
+.hero-content {
+  position: absolute;
+  top: 52%;        /* moves text down into the sound board strip */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;      /* lets text stretch across the strip */
+  text-align: center;
+  z-index: 10;
+}
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(0,0,0,0.9);
+  margin-bottom: 10px;
+}
+.hero-sub {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #eaeaea;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  margin-bottom: 20px;
+}
+.hero-membership {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(0,0,0,0.85);
+}
+#player {
+  width: 350px;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  font-family: Arial;
+}
+
+#controls button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#seek {
+  width: 100%;
+  margin-top: 10px;
+}
+#wrss-player {
+  max-width: 500px;
+  margin: 40px auto;
+  text-align: center;
+  color: #ffd700;
+  font-family: Arial, sans-serif;
+}
+
+.wrss-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.wrss-controls {
+  margin: 20px 0;
+}
+
+.wrss-btn {
+  background: #333;
+  color: #ffd700;
+  border: none;
+  padding: 10px 18px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.wrss-btn:hover {
+  background: #444;
+}
+
+.wrss-main {
+  background: #ffd700;
+  color: #000;
+  font-weight: bold;
+}
+
+.wrss-playlist a {
+  display: block;
+  padding: 8px;
+  color: #ffd700;
+  text-decoration: none;
+  text-align: left;
+}
+
+.wrss-playlist a.active {
+  background: #333;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #222 0%, #000 60%);
+  color: #f5f5f5;
+}
+
+.wrss-wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.wrss-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f9e27b;
+}
+
+.wrss-header p {
+  margin-top: 6px;
+  color: #ccc;
+}
+
+.wrss-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* Gold Player Panel */
+.wrss-player-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wrss-player-bar {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 0 25px rgba(249, 226, 123, 0.25);
+  overflow: hidden;
+}
+
+.wrss-gold-strip {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #f9e27b, #f5c84c, #f9e27b);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.wrss-controls {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.wrss-controls button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #111;
+  color: #f9e27b;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.wrss-controls button:hover {
+  background: #222;
+  box-shadow: 0 0 18px rgba(249, 226, 123, 0.35);
+}
+
+.wrss-controls button:active {
+  transform: scale(0.96);
+}
+
+.wrss-track-info {
+  position: relative;
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #f5f5f5;
+}
+
+/* Now Playing Scroll */
+.wrss-now-scroll {
+  background: #111;
+  border-radius: 999px;
+  padding: 8px 16px;
+  border: 1px solid rgba(249, 226, 123, 0.4);
+  overflow: hidden;
+}
+
+#wr-now-text-scroll {
+  white-space: nowrap;
+  animation: wrss-scroll 18s linear infinite;
+  color: #f9e27b;
+  font-size: 0.9rem;
+}
+
+
+/* Playlist Panel */
+.wrss-playlist-panel {
+  background: rgba(12, 12, 12, 0.9);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+}
+
+.wrss-playlist-panel h2 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f9e27b;
+}
+
+.wrss-playlist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.wrss-playlist-item {
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #181818;
+  color: #eee;
+  transition: background 0.2s, color 0.2s;
+}
+
+.wrss-playlist-item span {
+  pointer-events: none;
+}
+
+.wrss-playlist-item:hover {
+  background: #222;
+  color: #f9e27b;
+}
+
+.wrss-playlist-item.active {
+  background: #f9e27b;
+  color: #111;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .wrss-main {
+    grid-template-columns: 1fr;
+  }
+	}
+.signin-box {
+  background: #111;
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.signin-title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #d4af37;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.signin-form label {
+  text-align: left;
+  font-size: 14px;
+}
+
+.signin-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.signin-btn {
+  background: #d4af37;
+  color: #000;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signin-btn:hover {
+  background: #c19b2f;
+}
+
+.signup-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #d4af37;
+  font-weight: bold;
+}
+.signup-box {
+  background: #111;
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 420px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.signup-title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #d4af37;
+  letter-spacing: 1px;
+}
+
+.signup-tagline {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.signup-form label {
+  text-align: left;
+  font-size: 14px;
+  color: #d4af37;
+}
+
+.signup-form input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid #444;
+  background: #222;
+  color: #fff;
+}
+
+.signup-btn {
+  background: #d4af37;
+  color: #000;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signup-btn:hover {
+  background: #c19b2f;
+}
+
+.signin-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signin-link a {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.signup-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px;
+  width: 100%;
+}
+
+.signup-form label,
+.signup-form input,
+.signup-form button {
+  display: block !important;
+  width: 100%;
+}
+/* FORCE VERTICAL STACKING */
+.signup-form {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+}
+
+.signup-form label,
+.signup-form input,
+.signup-form button {
+  display: block !important;
+  width: 100% !important;
+  margin: 8px 0 !important;
+}
+.signup-box {
+  display: block !important;
+}
+
+.signup-form {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+.signup-form label,
+.signup-form input,
+.signup-form button {
+  display: block !important;
+  width: 100% !important;
+}
+}
+.signin-link a {
+  color: #d4af37;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signin-link a:hover {
+  color: #c19b2f;
+}
+.sync-hero {
+  margin-bottom: 40px;
+}
+.listening-center-banner {
+  margin-bottom: 50px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* spacing between fields */
+    width: 100%;
+}
+/* Container centers the whole form */
+.form-container {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Each row: label left, box right */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+/* Label styling */
+.form-row label {
+    width: 40%;
+    font-size: 15px;
+    color: #fff;
+}
+
+/* Input styling */
+.form-row input {
+    width: 55%;
+    height: 35px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #d4a72c; /* WRSS gold */
+    background-color: #fff;
+}
+
+/* Genre box longer */
+.form-row input.genre-box {
+    width: 70%;
+}
+
+/* Password rules message */
+.password-rules {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #d4a72c; /* gold accent */
+}
+
+/* Submit button */
+button {
+    background-color: #d4a72c;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button:hover {
+    background-color: #e6b94a;
+}
+
+/* Sign-in link spacing */
+.signin-link {
+    margin-top: 12px;
+    display: block;
+    color: #d4a72c;
+    font-size: 14px;
+}
+.form-header {
+    margin-bottom: 30px; /* adjust 30–50px depending on your eye */
+}
+margin-bottom: 40px;
+.form-header {
+    margin-top: 60px;   /* adjust 40–60px depending on your eye */
+    margin-bottom: 30px;
+}
+.signup-banner h2 {
+    color: #d4a72c;       /* WRSS gold */
+    font-size: 38px;      /* bigger, more presence */
+    font-weight: 700;     /* stronger */
+    margin-bottom: 10px;
+}
+
+.signup-banner p {
+    color: #fff;
+    font-size: 20px;      /* slightly bigger too */
+}
+.signup-banner h2 {
+    color: #d4a72c;       /* WRSS gold */
+    font-size: 42px;      /* bigger, eye-catching */
+    font-weight: 800;     /* strong presence */
+    letter-spacing: 1px;  /* subtle spacing for premium look */
+    margin-bottom: 12px;
+}
+
+.signup-banner p {
+    color: #fff;
+    font-size: 22px;      /* slightly bigger */
+    font-weight: 400;
+}
+.signup-banner h2 {
+    text-shadow: 0 0 10px rgba(212,167,44,0.6);
+}
+.signup-banner h2 {
+    border-bottom: 2px solid #d4a72c;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+.signup-banner {
+    background-image: url('studio-blur.jpg'); /* replace with your actual image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 50px 25px;     /* gives the header breathing room */
+    text-align: center;     /* keeps header centered */
+    margin-top: 40px;       /* spacing from hero */
+    margin-bottom: 40px;    /* spacing before form */
+    border-radius: 10px;    /* clean WRSS look */
+    backdrop-filter: blur(2px); /* optional subtle blur */
+}
+
+.signup-banner h2 {
+    color: #d4a72c;         /* WRSS gold */
+    font-size: 42px;        /* bigger, eye-catching */
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.signup-banner p {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+}
+.scroll-arrow {
+    width: 70px;
+    height: 70px;
+    margin: 30px auto;
+    border-radius: 50%;
+    border: 3px solid #d4a72c; /* WRSS gold */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.4); /* subtle dark fill */
+    box-shadow: 0 0 12px rgba(212,167,44,0.35); /* gold glow */
+}
+
+.scroll-arrow::after {
+    content: "↓";               /* bold downward arrow */
+    font-size: 40px;            /* large, noticeable */
+    color: #d4a72c;             /* WRSS gold */
+    font-weight: 700;
+}
+.scroll-arrow {
+    width: 70px;
+    height: 70px;
+    margin: 30px auto 25px auto; /* 25px space BELOW the arrow */
+    border-radius: 50%;
+    border: 3px solid #d4a72c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.4);
+    box-shadow: 0 0 12px rgba(212,167,44,0.35);
+}
+
+.scroll-arrow::after {
+    content: "↓";
+    font-size: 40px;
+    color: #d4a72c;
+    font-weight: 700;
+}
+.gold-section {
+    border: 2px solid #d4a72c; /* WRSS gold */
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px auto;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 12px rgba(212,167,44,0.35);
+}
+.gold-section {
+    border: 2px solid #d4a72c; /* WRSS gold */
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px auto;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 12px rgba(212,167,44,0.35);
+}
+.header-banner {
+    background-image: url('studio-blur.jpg'); /* replace with your banner image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 50px 25px;
+    text-align: center;
+    margin: 40px auto;
+    border-radius: 12px;
+    border: 2px solid #d4a72c; /* WRSS gold border */
+    box-shadow: 0 0 12px rgba(212,167,44,0.35); /* gold glow */
+}
+
+.header-banner h2 {
+    color: #d4a72c;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.header-banner p {
+    color: #fff;
+    font-size: 22px;
 }
