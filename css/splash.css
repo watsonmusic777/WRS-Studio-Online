@@ -45,4 +45,29 @@ body, html {
     margin-top: 10px;
     opacity: 0.9;
 }
+.wrs-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.mic-left {
+    width: 160px;
+    transform: rotate(-20deg);
+    opacity: 0.9;
+}
+
+.mic-right {
+    width: 160px;
+    transform: rotate(20deg);
+    opacity: 0.9;
+}
+
+.wrs-title {
+    color: #d4af37;
+    font-size: 72px;
+    text-shadow: 0 0 12px #d4af37;
+    font-weight: bold;
+}
 
